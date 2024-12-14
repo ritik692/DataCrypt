@@ -1,36 +1,23 @@
 <%--
-    Document   : description
+    Document   : keyexchange
     Author     : Varun Dhall
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-
-<%    response.setHeader("Cache-Control", "no-cache"); //HTTP 1.1
-    response.setHeader("Pragma", "no-cache"); //HTTP 1.0
-    response.setDateHeader("Expires", 0); //prevents caching at the proxy server
-    response.setHeader("Cache-Control", "no-store"); //HTTP 1.1
-    String id = null;
-    id = (String) session.getAttribute("ID");
-    if (id != null) {
+<!DOCTYPE HTML>
+<%
+    String userid = request.getParameter("userid");
 %>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>Decrypt AES Key  -  Efficient & Secure Data Storage & Access Scheme in Cloud Computing using AES</title>
-        <link href="css/style.css" rel="stylesheet" type="text/css"/>
-        <script type="text/javascript" src="js/scw.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+        <title>Key Exchange -  Efficient & Secure Data Storage & Access Scheme in Cloud Computing using AES</title>
+        <link href="css/style.css" rel="stylesheet" type="text/css">
         <script type="text/javascript">
             function validation() {
-                var publickey = document.getElementById('publickey');
-                if (publickey.value.trim() == "") {
-                    alert('Please enter AES key');
-                    publickey.focus();
-                    return false;
-                }
-                var txtfile = document.getElementById('txtfile');
-                if (txtfile.value.trim() == "") {
-                    alert('Please select file');
-                    txtfile.focus();
+                var secretkey = document.getElementById('secretkey');
+                if (secretkey.value.trim() == "") {
+                    alert('Please enter your secret key');
+                    secretkey.focus();
                     return false;
                 }
             }
@@ -46,18 +33,17 @@
             <tr>
                 <td class="content">
                     <div class="form_content">
-                        <form method="post" action="decryptedKey">
+                        <form method="post" action="keyGeneration">
                             <table cellpadding="3" cellspacing="3" width="100%">
                                 <tr>
                                     <td>
                                         <div class="expand">
-                                            <span>Decrypted AES key and download file</span>
+                                            <span>Key Exchange</span>
                                         </div>
                                     </td>
                                 </tr>
                                 <%
                                     String msg = null;
-                                    String fileid = request.getParameter("fileid");
                                     msg = (String) session.getAttribute("MSG");
                                     if (msg != null) {
                                 %>
@@ -72,19 +58,24 @@
                                     }
                                 %>
                                 <tr>
-                                    <td class="span">
-                                        Enter public key for download file and decrypt AES Key.
+                                    <td>
+                                        <span onclick="" class="span"><strong>Your Registration id is</strong></span>
                                     </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" name="userid" id="userid" placeholder="User ID" class="input" readonly="" value="<%=userid%>"/></td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" name="publickey" id="publickey" placeholder="Public Key" class="input"/>
-                                        <input type="hidden" name="fileid" id="fileid" value="<%=fileid%>"/>
+                                        <span onclick="" class="span"><strong>Enter your secret private key for ECDH key exchange</strong></span>
                                     </td>
                                 </tr>
                                 <tr>
+                                    <td><input type="text" name="secretkey" id="secretkey" placeholder="Secret Key" class="input"/></td>
+                                </tr>
+                                <tr>
                                     <td align="right">
-                                        <input type="submit" name="btnsubmit" id="btnsubmit" value="Submit">
+                                        <input type="submit" name="btnsubmit" id="btnsubmit" value="Submit" onclick="return validation();">
                                     </td>
                                 </tr>
                             </table>
@@ -100,8 +91,3 @@
         </table>
     </body>
 </html>
-<%    } else {
-        session.setAttribute("MSG", "You must be login.");
-        response.sendRedirect("login.jsp");
-    }
-%>

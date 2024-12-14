@@ -17,6 +17,7 @@ import java.security.spec.ECGenParameterSpec;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.Random;
 
 import static com.example.connection.DbConnection.makeConnection;
@@ -34,8 +35,8 @@ public class KeyGeneration extends HttpServlet {
     int otp = 0;
     String host = "smtp.gmail.com";
     String port = "587";
-    String userName = "emailID";
-    String password = "emailPass";
+    String userName = "aroraritik30@gmail.com";
+    String password = "hpsg zaav tstd hkuk";
 
     int i = 0;
 
@@ -52,9 +53,13 @@ public class KeyGeneration extends HttpServlet {
 
         userid = request.getParameter("userid");
         secretekey = request.getParameter("secretkey");
+        System.out.println("userid in keygen: " + userid);
+        System.out.println("secretkey: " + secretekey);
 
         //Generation ECC Key Agreement
         try {
+            System.out.println("Finally entered in try block of keygeneration");
+
             KeyPairGenerator kpg;
             kpg = KeyPairGenerator.getInstance("EC", "SunEC");
             ECGenParameterSpec ecsp;
@@ -77,6 +82,7 @@ public class KeyGeneration extends HttpServlet {
             secretV = new BigInteger(1, ecdhV.generateSecret()).toString(16).toUpperCase();
 
         } catch (Exception e) {
+            System.out.println("Some error occured , thats why catch of keygeneration");
             e.printStackTrace();
         }
 
@@ -84,16 +90,28 @@ public class KeyGeneration extends HttpServlet {
         Random rand = new Random();
         otp = rand.nextInt((999999 - 100000) + 1) + 100000;
 
+        System.out.println("otp generated is: " + otp);
+
         try {
             String query = "SELECT email FROM users WHERE userid = '" + userid + "' AND u_status = '1'";
+//            String q1="SELECT email FROM users WHERE userid = " + userid ;
+//            Statement st = con.createStatement();
+//            ResultSet rs =  st.executeQuery(q1);
+//            while(rs.next())
+//            {
+//                System.out.println("email in rs of keygeneration: " + email);
+//            }
             pst = con.prepareStatement(query);
             rst = pst.executeQuery();
             if (rst.next()) {
+                System.out.println("entered in rst of keygen");
                 email = rst.getString(1);
+                System.out.println("Email updated: " + email);
                 String subject = "OTP from Secure Cloud using ECC";
                 String message = "Your OTP is " + otp;
                 //Send email
                 try {
+//                    System.out.println("mje kro");
                     EmailUtility.sendEmail(host, port, userName, password, email, subject,
                             message);
                     // resultMessage = "The e-mail was sent successfully";

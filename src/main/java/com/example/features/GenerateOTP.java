@@ -11,6 +11,7 @@ import java.math.BigInteger;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
@@ -27,8 +28,8 @@ public class GenerateOTP extends HttpServlet {
     int i = 0;
     String host = "smtp.gmail.com";
     String port = "587";
-    String userName = "emailID";
-    String password = "emailPass";
+    String userName = "aroraritik30@gmail.com";
+    String password = "hpsg zaav tstd hkuk";
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -57,10 +58,18 @@ public class GenerateOTP extends HttpServlet {
         //send email to user
         try {
             String query = "SELECT email FROM users WHERE userid = '" + userid + "' AND u_status = '1'";
+            String q1="SELECT email FROM users WHERE userid = " + userid ;
+            Statement st = con.createStatement();
+            ResultSet rs =  st.executeQuery(q1);
+            while(rs.next())
+            {
+                System.out.println("email in rs of generateotp: " + email);
+            }
             pst = con.prepareStatement(query);
             rst = pst.executeQuery();
             if (rst.next()) {
                 email = rst.getString(1);
+                System.out.println("Email of Recipient: " + email);
                 System.out.println("email: " + email);
                 String subject = "OTP from Secure Cloud using ECC";
                 String message = "Your OTP is " + otp;

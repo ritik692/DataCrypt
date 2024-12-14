@@ -28,7 +28,7 @@ import java.sql.ResultSet;
 import java.util.Iterator;
 import java.util.List;
 
-@WebServlet(name = "Description", urlPatterns = {"/description"})
+@WebServlet(name = "Decryption", urlPatterns = {"/decryption"})
 public class Decryption extends HttpServlet {
     static Connection con = null;
     PreparedStatement pst = null;

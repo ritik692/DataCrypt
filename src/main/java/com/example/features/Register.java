@@ -62,6 +62,8 @@ public class Register extends HttpServlet {
         ServletConfig config = getServletConfig();
         String context = config.getServletContext().getRealPath("/");
 
+
+        System.out.println("Session: " + session);
 //
 
         //connection from database
@@ -75,6 +77,7 @@ public class Register extends HttpServlet {
         }
 
         userid = com.example.connection.AutoID.globalGenId("registration");
+        System.out.println("userid: " + userid);
         name = request.getParameter("name");
         email = request.getParameter("email");
         mobile = request.getParameter("mobile");
@@ -94,11 +97,14 @@ public class Register extends HttpServlet {
             i = pst.executeUpdate();
 
         } catch (Exception e) {
-            e.printStackTrace();;
+            e.printStackTrace();
         }
+        System.out.println("Value of i: " + i);
 
         if (i > 0) {
             com.example.connection.AutoID.updateAutoID("registration", userid);
+            session.setAttribute("ID",userid);
+            System.out.println("Session ID: " + session.getAttribute("ID"));
             response.sendRedirect("keyexchange.jsp?userid=" + userid);
         } else {
             session.setAttribute("MSG", "Your data has not been registered.");

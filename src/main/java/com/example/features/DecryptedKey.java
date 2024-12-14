@@ -2,6 +2,7 @@ package com.example.features;
 
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,6 +14,8 @@ import java.sql.ResultSet;
 
 import static com.example.connection.ECC.hexToBytes;
 
+
+@WebServlet(name = "DecryptedKey", urlPatterns = {"/decryptedKey"})
 public class DecryptedKey extends HttpServlet {
     Connection con = null;
     PreparedStatement pst = null;
@@ -41,7 +44,9 @@ public class DecryptedKey extends HttpServlet {
         }
 
         fileid = request.getParameter("fileid");
+        System.out.println("In decryptedKey , fileid: " + fileid);
         String pubkey = request.getParameter("publickey");
+        System.out.println("PublicKey: " + pubkey);
 
         try {
             String query = "SELECT privatekey,file_path,encrypted_aes_key FROM files WHERE privatekey = '" + pubkey + "' AND id = '" + fileid + "'";

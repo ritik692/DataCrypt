@@ -1,6 +1,7 @@
 package com.example.features;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,6 +11,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+
+@WebServlet(name = "MyAccount", urlPatterns = {"/myAccount"})
 public class MyAccount extends HttpServlet {
     static Connection con = null;
     PreparedStatement pst = null;
