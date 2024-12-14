@@ -12,6 +12,7 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLOutput;
 
 @WebServlet(name = "Register", urlPatterns = {"/register"})
 public class Register extends HttpServlet {
@@ -61,10 +62,16 @@ public class Register extends HttpServlet {
         ServletConfig config = getServletConfig();
         String context = config.getServletContext().getRealPath("/");
 
+//
+
         //connection from database
         try {
+
             con = com.example.connection.DbConnection.makeConnection();
+//
+//
         } catch (Exception e) {
+
         }
 
         userid = com.example.connection.AutoID.globalGenId("registration");
@@ -76,6 +83,7 @@ public class Register extends HttpServlet {
 
         try {
             String sqlquery = "INSERT INTO users(userid,name,email,mobile,dob,gender,created) VALUES(?,?,?,?,?,?, NOW())";
+//
             pst = con.prepareStatement(sqlquery);
             pst.setString(1, userid);
             pst.setString(2, name);
