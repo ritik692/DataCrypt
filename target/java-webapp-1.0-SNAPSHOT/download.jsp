@@ -29,7 +29,7 @@
             <tr>
                 <td class="content">
                     <div class="form_content">
-                        <form method="post" action="description" enctype="multipart/form-data">
+                        <form method="post" action="decryption" enctype="multipart/form-data">
                             <table cellpadding="3" cellspacing="3" width="100%">
                                 <tr>
                                     <td>
@@ -42,8 +42,14 @@
                                     <td style="font-size: 16px;text-align: center; ">
                                         <%
                                             String filename = request.getParameter("filename");
+                                            if (filename != null && filename.length() > 0) {
+                                                        // Remove the last character
+                                                        filename = filename.substring(0, filename.length() - 1);
+                                            }
+                                            System.out.println("filename generated: " + filename);
                                         %>
                                         Your file has been successfully decrypted.<br/><br/>
+
                                         <a href="uploads/downloads/<%=filename%>" class="span">Click here to download decrypted file</a><br/><br/>
                                     </td>
                                 </tr>

@@ -20,15 +20,15 @@
                 String utype = (String) session.getAttribute("UTYPE");
                 if (utype.equals("admin")) {
             %>
-            <a href="usrelist.jsp" class="white_font_bold">User List</a><span class="clear">|</span>
+            <a href="userlist.jsp" class="white_font_bold">User List</a><span class="clear">|</span>
             <a href="filelist.jsp" class="white_font_bold">File List</a><span class="clear">|</span>
             <a href="encryption.jsp" class="white_font_bold">Encryption</a><span class="clear">|</span>
-            <a href="description.jsp" class="white_font_bold">Decryption</a><span class="clear">|</span>
+            <a href="decryption.jsp" class="white_font_bold">Decryption</a><span class="clear">|</span>
             <a href="downloadfile.jsp" class="white_font_bold">Download&nbsp;File</a>
             <% } else {
             %>
             <a href="encryption.jsp" class="white_font_bold">Encryption</a><span class="clear">|</span>
-            <a href="description.jsp" class="white_font_bold">Decryption</a><span class="clear">|</span>
+            <a href="decryption.jsp" class="white_font_bold">Decryption</a><span class="clear">|</span>
             <a href="downloadfile.jsp" class="white_font_bold">Download&nbsp;File</a>
             <% }
             %>

@@ -1,6 +1,6 @@
 <%--
     Document   : download
-    Author     : Varun Dhall
+    Author     : Rajnish, Ritik and Rugung
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -42,8 +42,14 @@
                                     <td style="font-size: 16px;text-align: center; ">
                                         <%
                                             String filename = request.getParameter("filename");
+                                            if (filename != null && filename.length() > 0) {
+                                                        // Remove the last character
+                                                        filename = filename.substring(0, filename.length() - 1);
+                                            }
+                                            System.out.println("filename generated: " + filename);
                                         %>
                                         Your file has been successfully decrypted.<br/><br/>
+
                                         <a href="uploads/downloads/<%=filename%>" class="span">Click here to download decrypted file</a><br/><br/>
                                     </td>
                                 </tr>

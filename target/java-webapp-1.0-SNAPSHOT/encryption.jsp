@@ -29,10 +29,10 @@
                     return false;
                 }
 
-                var usrfile = document.getElementById('usrfile');
-                if (usrfile.value.trim() == "") {
+                var userfile = document.getElementById('userfile');
+                if (userfile.value.trim() == "") {
                     alert('Please select file');
-                    usrfile.focus();
+                    userfile.focus();
                     return false;
                 }
 
