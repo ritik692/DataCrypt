@@ -45,10 +45,10 @@ public class Register extends HttpServlet {
 
         if (i > 0) {
             session.setAttribute("MSG", "User has been successfuly deleted !!");
-            response.sendRedirect("usrelist.jsp");
+            response.sendRedirect("userlist.jsp");
         } else {
             session.setAttribute("MSG", "User has not been deleted !!");
-            response.sendRedirect("usrelist.jsp");
+            response.sendRedirect("userlist.jsp");
         }
     }
 

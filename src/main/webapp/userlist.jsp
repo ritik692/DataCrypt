@@ -1,5 +1,5 @@
 <%--
-    Document   : usrelist
+    Document   : userlist
     Author     : Varun Dhall
 --%>
 
@@ -71,7 +71,7 @@
                         <%
                             int i = 0;
                             try {
-                                conn = connection.dbConnection.makeConnection();
+                                conn = com.example.connection.DbConnection.makeConnection();
                                 String query = "SELECT userid,NAME,email,mobile FROM users WHERE utype != 'admin'";
                                 st = conn.prepareStatement(query);
                                 result = st.executeQuery(query);

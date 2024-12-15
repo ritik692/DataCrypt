@@ -29,7 +29,7 @@
             <tr>
                 <td class="content">
                     <div class="form_content">
-                        <form method="post" action="description" enctype="multipart/form-data">
+                        <form method="post" action="decryption" enctype="multipart/form-data">
                             <table cellpadding="3" cellspacing="3" width="100%">
                                 <tr>
                                     <td>

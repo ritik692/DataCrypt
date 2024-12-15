@@ -36,7 +36,7 @@ public class KeyGeneration extends HttpServlet {
     String host = "smtp.gmail.com";
     String port = "587";
     String userName = "aroraritik30@gmail.com";
-    String password = "hpsg zaav tstd hkuk";
+    String password = "ikhw eawy gugn ydbu";
 
     int i = 0;
 
@@ -141,6 +141,9 @@ public class KeyGeneration extends HttpServlet {
         //success or failure message
         if (i > 0) {
             session.setAttribute("MSG", "ECDH Key agreement has been successfully generated.");
+            System.out.println("ECDH Key agreement has been successfully generated");
+            System.out.println("userId: " + userid);
+            System.out.println("secretu: " + secretU);
             response.sendRedirect("secretkey.jsp?userid=" + userid + "&secretkey=" + secretU);
         } else {
             session.setAttribute("MSG", "Secret key has not been generated.");

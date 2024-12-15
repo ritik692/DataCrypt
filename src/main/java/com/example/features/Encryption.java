@@ -117,6 +117,7 @@ public class Encryption extends HttpServlet {
         }
 
         String filePath = context + File.separator + "uploads" + File.separator;
+        System.out.println("filePath: " + filePath);
 
         boolean status = false;
         String enc_filpath = null;
@@ -240,7 +241,7 @@ public class Encryption extends HttpServlet {
 
                 String messge = "<span style='darkgreen'>Your file has been successfully encrypted.<br/> Your key is <strong>" + secretU + ".</strong> <br/>Please enter your key at a time of downloading files.</span>";
                 session.setAttribute("MSG", messge);
-                response.sendRedirect("encryption.jsp");
+                response.sendRedirect("downloadfile.jsp");
             } else {
                 session.setAttribute("MSG", "File has not been uploaded.");
                 response.sendRedirect("encryption.jsp");

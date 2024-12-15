@@ -67,7 +67,7 @@ public class DecryptedKey extends HttpServlet {
 
             } else {
                 session.setAttribute("MSG", "Please enter valid public key.");
-                response.sendRedirect("keydescription.jsp?fileid=" + fileid);
+                response.sendRedirect("keydecryption.jsp?fileid=" + fileid);
             }
         } catch (Exception e) {
             e.printStackTrace();

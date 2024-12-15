@@ -1,5 +1,5 @@
 <%--
-    Document   : description
+    Document   : decryption
     Author     : Varun Dhall
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -16,7 +16,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>Decryption -  Efficient & Secure Data Storage & Access Scheme in Cloud Computing using AES</title>
+        <title>Decrypt AES Key  -  Efficient & Secure Data Storage & Access Scheme in Cloud Computing using AES</title>
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
         <script type="text/javascript" src="js/scw.js"></script>
         <script type="text/javascript">
@@ -46,17 +46,18 @@
             <tr>
                 <td class="content">
                     <div class="form_content">
-                        <form method="post" action="description" enctype="multipart/form-data">
+                        <form method="post" action="decryptedKey">
                             <table cellpadding="3" cellspacing="3" width="100%">
                                 <tr>
                                     <td>
                                         <div class="expand">
-                                            <span>Decryption</span>
+                                            <span>Decrypted AES key and download file</span>
                                         </div>
                                     </td>
                                 </tr>
                                 <%
                                     String msg = null;
+                                    String fileid = request.getParameter("fileid");
                                     msg = (String) session.getAttribute("MSG");
                                     if (msg != null) {
                                 %>
@@ -71,14 +72,19 @@
                                     }
                                 %>
                                 <tr>
-                                    <td><input type="text" name="publickey" id="publickey" placeholder="AES Key" class="input"/></td>
+                                    <td class="span">
+                                        Enter public key for download file and decrypt AES Key.
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td><input type="file" name="txtfile" id="txtfile" class="input"/></td>
+                                    <td>
+                                        <input type="text" name="publickey" id="publickey" placeholder="Public Key" class="input"/>
+                                        <input type="hidden" name="fileid" id="fileid" value="<%=fileid%>"/>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td align="right">
-                                        <input type="submit" name="btnsubmit" id="btnsubmit" value="Submit" onclick="return validation()">
+                                        <input type="submit" name="btnsubmit" id="btnsubmit" value="Submit">
                                     </td>
                                 </tr>
                             </table>

@@ -56,7 +56,7 @@ public class FirstLogin extends HttpServlet {
                 String query_update = "UPDATE users SET gen_user_id = '" + ciper + "' WHERE userid = '" + reg_id + "'";
                 pst = con.prepareStatement(query_update);
                 pst.executeUpdate();
-                response.sendRedirect("sucess_registration.jsp?userid=" + ciper);
+                response.sendRedirect("success_registration.jsp?userid=" + ciper);
 
             } else {
                 session.setAttribute("MSG", "Userid and otp are wrong.");

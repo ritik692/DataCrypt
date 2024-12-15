@@ -70,7 +70,7 @@
                         <%
                             int i = 0;
                             try {
-                                conn = connection.dbConnection.makeConnection();
+                                conn = com.example.connection.DbConnection.makeConnection();
                                 String query = "SELECT u.name,f.id,f.file_name,f.created,f.file_path FROM users u, files f WHERE u.userid = f.userid ORDER BY f.id DESC";
                                 st = conn.prepareStatement(query);
                                 result = st.executeQuery(query);
@@ -89,7 +89,7 @@
                             <td><%=fname%></td>
                             <td align="center"><%=adding_date%>.</td>
                             <td align="center">
-                                <a href="description?id=<%=fileid%>&filepath=<%=file_path%>" class="cursor">Delete</a>
+                                <a href="decryption?id=<%=fileid%>&filepath=<%=file_path%>" class="cursor">Delete</a>
                             </td>
                         </tr>
                         <%    }

@@ -174,7 +174,7 @@ public class Decryption extends HttpServlet {
             response.sendRedirect("download.jsp?filename=" + filename);
         } else {
             session.setAttribute("MSG", "Please enter correct file." + err);
-            response.sendRedirect("description.jsp");
+            response.sendRedirect("decryption.jsp");
         }
 
     }

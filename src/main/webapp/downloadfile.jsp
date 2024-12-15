@@ -70,7 +70,7 @@
                         <%
                             int i = 0;
                             try {
-                                conn = connection.dbConnection.makeConnection();
+                                conn = com.example.connection.DbConnection.makeConnection();
                                 String query = "SELECT id,file_name,file_path,created FROM files WHERE userid='" + id + "' ORDER BY id DESC";
                                 st = conn.prepareStatement(query);
                                 result = st.executeQuery(query);
@@ -86,7 +86,7 @@
                             <td><%=fname%></td>
                             <td align="center"><%=adding_date%>.</td>
                             <td align="center">
-                                <a href="keydescription.jsp?fileid=<%=fileid%>">Download</a>
+                                <a href="keydecryption.jsp?fileid=<%=fileid%>">Download</a>
                             </td>
                             <td align="center">
                                 <a href="encryption?id=<%=fileid%>&filepath=<%=filepath%>" class="cursor">Delete</a>

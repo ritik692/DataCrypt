@@ -105,7 +105,7 @@
                                 %>
                                 <%
                                     try {
-                                        conn = connection.dbConnection.makeConnection();
+                                        conn = com.example.connection.DbConnection.makeConnection();
                                         String query = "SELECT name,email,mobile,gender,dob FROM users WHERE userid='" + id + "'";
                                         st = conn.prepareStatement(query);
                                         result = st.executeQuery(query);
