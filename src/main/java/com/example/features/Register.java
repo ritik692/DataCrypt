@@ -64,14 +64,8 @@ public class Register extends HttpServlet {
 
 
         System.out.println("Session: " + session);
-//
-
-        //connection from database
         try {
-
             con = com.example.connection.DbConnection.makeConnection();
-//
-//
         } catch (Exception e) {
 
         }

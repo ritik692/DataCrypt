@@ -26,7 +26,8 @@ public class AES {
             if (filename.endsWith(".aes")) {
                 filename = filename.substring(
                         0, filename.length()
-                                - kind.length());    // -suffix
+                                - kind.length() -1);    // -suffix
+                System.out.println("File name after removing .aes : " + filename );
             } else {
                 res = "1";
             }

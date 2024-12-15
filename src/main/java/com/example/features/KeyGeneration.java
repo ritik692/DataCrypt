@@ -1,5 +1,7 @@
 package com.example.features;
 
+import io.github.cdimascio.dotenv.Dotenv;
+import java.io.IOException;
 import javax.crypto.KeyAgreement;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -7,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.IOException;
 import java.math.BigInteger;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
@@ -17,10 +18,7 @@ import java.security.spec.ECGenParameterSpec;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.Random;
-
-import static com.example.connection.DbConnection.makeConnection;
 
 @WebServlet(name = "KeyGeneration", urlPatterns = {"/keyGeneration"})
 public class KeyGeneration extends HttpServlet {
@@ -35,10 +33,13 @@ public class KeyGeneration extends HttpServlet {
     int otp = 0;
     String host = "smtp.gmail.com";
     String port = "587";
-    String userName = "aroraritik30@gmail.com";
-    String password = "ikhw eawy gugn ydbu";
+    String userName = null;
+    String password = null;
 
     int i = 0;
+
+
+
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -94,24 +95,21 @@ public class KeyGeneration extends HttpServlet {
 
         try {
             String query = "SELECT email FROM users WHERE userid = '" + userid + "' AND u_status = '1'";
-//            String q1="SELECT email FROM users WHERE userid = " + userid ;
-//            Statement st = con.createStatement();
-//            ResultSet rs =  st.executeQuery(q1);
-//            while(rs.next())
-//            {
-//                System.out.println("email in rs of keygeneration: " + email);
-//            }
             pst = con.prepareStatement(query);
             rst = pst.executeQuery();
             if (rst.next()) {
                 System.out.println("entered in rst of keygen");
                 email = rst.getString(1);
                 System.out.println("Email updated: " + email);
-                String subject = "OTP from Secure Cloud using ECC";
+                String subject = "OTP from DataCrypt using ECC";
                 String message = "Your OTP is " + otp;
-                //Send email
+
                 try {
-//                    System.out.println("mje kro");
+                    Dotenv dotenv = Dotenv.configure()
+                            .directory("C:/Users/arora/Desktop/JavaWebApp/src/main/resources")
+                            .load();
+                    userName = dotenv.get("MAIL_USERNAME");
+                    password = dotenv.get("MAIL_PASSWORD");
                     EmailUtility.sendEmail(host, port, userName, password, email, subject,
                             message);
                     // resultMessage = "The e-mail was sent successfully";

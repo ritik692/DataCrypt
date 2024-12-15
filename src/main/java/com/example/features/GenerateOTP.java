@@ -1,5 +1,7 @@
 package com.example.features;
 
+import io.github.cdimascio.dotenv.Dotenv;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,7 +13,6 @@ import java.math.BigInteger;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
@@ -28,8 +29,8 @@ public class GenerateOTP extends HttpServlet {
     int i = 0;
     String host = "smtp.gmail.com";
     String port = "587";
-    String userName = "aroraritik30@gmail.com";
-    String password = "ikhw eawy gugn ydbu";
+    String userName = null;
+    String password = null;
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -71,10 +72,15 @@ public class GenerateOTP extends HttpServlet {
                 email = rst.getString(1);
                 System.out.println("Email of Recipient: " + email);
                 System.out.println("email: " + email);
-                String subject = "OTP from Secure Cloud using ECC";
+                String subject = "OTP from DataCrypt using ECC";
                 String message = "Your OTP is " + otp;
                 //Send email
                 try {
+                    Dotenv dotenv = Dotenv.configure()
+                            .directory("C:/Users/arora/Desktop/JavaWebApp/src/main/resources")
+                            .load();
+                    userName = dotenv.get("MAIL_USERNAME");
+                    password = dotenv.get("MAIL_PASSWORD");
                     EmailUtility.sendEmail(host, port, userName, password, email, subject,
                             message);
                     // resultMessage = "The e-mail was sent successfully";
