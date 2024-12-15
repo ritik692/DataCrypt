@@ -1,6 +1,6 @@
 <%--
     Document   : encryption
-    Author     : Varun Dhall
+    Author     : Rajnish, Ritik and Rugung
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -74,8 +74,9 @@
                                     }
                                 %>
                                 <tr>
-                                    <td><input type="text" name="xkey" id="xkey" placeholder="Encryption Key" class="input"/></td>
+                                    <td><input type="text" name="xkey" id="xkey" value="secp256r1" class="input" readonly /></td>
                                 </tr>
+
                                 <tr>
                                     <td><input type="file" name="txtfile" id="txtfile" class="input"/></td>
                                 </tr>

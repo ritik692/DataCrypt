@@ -1,6 +1,6 @@
 <%--
     Document   : myaccount
-    Author     : Varun Dhall
+    Author     : Rajnish, Ritik and Rugung
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -119,8 +119,9 @@
 
                                 %>
                                 <tr>
-                                    <td><input type="text" name="userid" id="userid" placeholder="Userid" class="input" value="<%=id%>"/></td>
+                                    <td><input type="text" name="userid" id="userid" placeholder="Userid" class="input" value="<%=id%>" readonly /></td>
                                 </tr>
+
                                 <tr>
                                     <td><input type="text" name="name" id="name" placeholder="Name" class="input" value="<%=name%>"/></td>
                                 </tr>

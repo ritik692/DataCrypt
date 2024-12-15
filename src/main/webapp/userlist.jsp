@@ -23,7 +23,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>Users List-  Efficient & Secure Data Storage & Access Scheme in Cloud Computing using AES</title>
+        <title>Users List-  Client Side File Encryption for Secure Cloud Storage</title>
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>

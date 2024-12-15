@@ -1,6 +1,6 @@
 <%--
     Document   : ecdh
-    Author     : Varun Dhall
+    Author     : Rajnish, Ritik and Rugung
 --%>
 
 <html>

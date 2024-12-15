@@ -110,6 +110,13 @@
             <version>5.2.2</version>
         </dependency>
 
+        <!-- Bouncy Castle Provider -->
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>1.70</version> <!-- You can check for the latest version -->
+        </dependency>
+
 
     </dependencies>
 

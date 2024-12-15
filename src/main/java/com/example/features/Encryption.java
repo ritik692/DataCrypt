@@ -238,9 +238,8 @@ public class Encryption extends HttpServlet {
             }
 
             if (i > 0) {
-
-                String messge = "<span style='darkgreen'>Your file has been successfully encrypted.<br/> Your key is <strong>" + secretU + ".</strong> <br/>Please enter your key at a time of downloading files.</span>";
-                session.setAttribute("MSG", messge);
+                String message = "<h3><span style='color: darkgreen;'>Your file has been successfully encrypted.<br/> Your key is <strong><span style='color: red;'>" + secretU + "</span></strong>. <br/>Please enter your key at a time of downloading files.</span></h3>";
+                session.setAttribute("MSG", message);
                 response.sendRedirect("downloadfile.jsp");
             } else {
                 session.setAttribute("MSG", "File has not been uploaded.");

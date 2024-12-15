@@ -50,16 +50,16 @@ public class FirstLogin extends HttpServlet {
                 String key = system_key.substring(0, 3);
                 String text = key + reg_id;
                 byte[] fooBytes = text.getBytes();
-                BigInteger ciper = new BigInteger(fooBytes);
+                BigInteger cipher = new BigInteger(fooBytes);
 
                 //update table
-                String query_update = "UPDATE users SET gen_user_id = '" + ciper + "' WHERE userid = '" + reg_id + "'";
+                String query_update = "UPDATE users SET gen_user_id = '" + cipher + "' WHERE userid = '" + reg_id + "'";
                 pst = con.prepareStatement(query_update);
                 pst.executeUpdate();
-                response.sendRedirect("success_registration.jsp?userid=" + ciper);
+                response.sendRedirect("success_registration.jsp?userid=" + cipher);
 
             } else {
-                session.setAttribute("MSG", "Userid and otp are wrong.");
+                session.setAttribute("MSG", "OTP entered is wrong.");
                 response.sendRedirect("secretkey.jsp?userid=" + reg_id + "&secretkey=" + system_key);
             }
         } catch (Exception e) {

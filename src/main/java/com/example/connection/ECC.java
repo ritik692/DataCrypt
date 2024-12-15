@@ -1,5 +1,6 @@
 package com.example.connection;
 
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import javax.crypto.*;
 import javax.crypto.spec.IvParameterSpec;
 import java.io.UnsupportedEncodingException;
@@ -31,6 +32,7 @@ public class ECC {
     public static SecretKey generateSharedSecret(PrivateKey privateKey,
                                                  PublicKey publicKey) {
         try {
+            Security.addProvider(new BouncyCastleProvider());
             KeyAgreement keyAgreement = KeyAgreement.getInstance("ECDH", "BC");
             keyAgreement.init(privateKey);
             keyAgreement.doPhase(publicKey, true);
@@ -47,6 +49,7 @@ public class ECC {
     public static String encryptString(SecretKey key, String plainText) {
         try {
             IvParameterSpec ivSpec = new IvParameterSpec(iv);
+            Security.addProvider(new BouncyCastleProvider());
             Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding", "BC");
             byte[] plainTextBytes = plainText.getBytes("UTF-8");
             byte[] cipherText;
@@ -70,6 +73,7 @@ public class ECC {
             Key decryptionKey = new SecretKeySpec(key.getEncoded(),
                     key.getAlgorithm());
             IvParameterSpec ivSpec = new IvParameterSpec(iv);
+            Security.addProvider(new BouncyCastleProvider());
             Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding", "BC");
             byte[] cipherTextBytes = hexToBytes(cipherText);
             byte[] plainText;

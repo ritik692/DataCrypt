@@ -1,6 +1,6 @@
 <%--
     Document   : decryption
-    Author     : Varun Dhall
+    Author     : Rajnish, Ritik and Rugung
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -21,10 +21,10 @@
         <script type="text/javascript" src="js/scw.js"></script>
         <script type="text/javascript">
             function validation() {
-                var publickey = document.getElementById('publickey');
-                if (publickey.value.trim() == "") {
+                var key = document.getElementById('key');
+                if (key.value.trim() == "") {
                     alert('Please enter AES key');
-                    publickey.focus();
+                    key.focus();
                     return false;
                 }
                 var txtfile = document.getElementById('txtfile');
@@ -51,7 +51,7 @@
                                 <tr>
                                     <td>
                                         <div class="expand">
-                                            <span>Decrypted AES key and download file</span>
+                                            <span>Decrypt AES key</span>
                                         </div>
                                     </td>
                                 </tr>
@@ -73,12 +73,12 @@
                                 %>
                                 <tr>
                                     <td class="span">
-                                        Enter public key for download file and decrypt AES Key.
+                                        Enter the key generated on the last step to decrypt AES Key.
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" name="publickey" id="publickey" placeholder="Public Key" class="input"/>
+                                        <input type="text" name="key" id="key" placeholder="Key" class="input"/>
                                         <input type="hidden" name="fileid" id="fileid" value="<%=fileid%>"/>
                                     </td>
                                 </tr>

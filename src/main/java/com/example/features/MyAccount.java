@@ -61,10 +61,10 @@ public class MyAccount extends HttpServlet {
         //success or failure message
         if (i > 0) {
 
-            session.setAttribute("MSG", "Your profile has been successfully update.");
+            session.setAttribute("MSG", "Your profile has been successfully updated.");
             response.sendRedirect("myaccount.jsp");
         } else {
-            session.setAttribute("MSG", "Your profile has not been update.");
+            session.setAttribute("MSG", "Email-id already registered");
             response.sendRedirect("myaccount.jsp");
         }
 

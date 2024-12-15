@@ -1,6 +1,6 @@
 <%--
     Document   : download
-    Author     : Varun Dhall
+    Author     : Rajnish, Ritik and Rugung
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -44,7 +44,8 @@
                                             String filename = request.getParameter("filename");
                                              String aes_key = request.getParameter("aes_key");
                                         %>
-                                        Your aes key has been successfully decrypted.<br/>Your AES KEY is <%=aes_key%><br/>
+                                        Your AES key has been successfully decrypted.<br/>Your AES KEY is <span style="color: red;"><%= aes_key %></span><br/>
+
                                         <a href="<%=filename%>" class="span">Click here to download decrypted file</a><br/><br/>
                                     </td>
                                 </tr>

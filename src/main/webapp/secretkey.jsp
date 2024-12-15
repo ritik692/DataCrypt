@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
-        <title>Secrete Key -  Efficient & Secure Data Storage & Access Scheme in Cloud Computing using AES</title>
+        <title>Secrete Key -  Client Side File Encryption for Secure Cloud Storage</title>
         <link href="css/style.css" rel="stylesheet" type="text/css">
         <script type="text/javascript">
             function validation() {
@@ -67,7 +67,7 @@
                                 <tr>
                                     <td>
                                         <input type="hidden" name="userid" id="userid" value="<%=userid%>"/>
-                                        <input type="text" name="secretekey" id="secretekey" placeholder="Secrete key" class="input" readonly="" value="<%=secretkey%>"/>
+                                        <input type="text" name="secretekey" id="secretekey" placeholder="Secretkey" class="input" readonly="" value="<%=secretkey%>"/>
                                     </td>
                                 </tr>
                                 <tr>

@@ -1,6 +1,6 @@
 <%--
     Document   : secretkey
-    Author     : Varun Dhall
+    Author     : Rajnish, Ritik and Rugung
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
@@ -67,7 +67,7 @@
                                 <tr>
                                     <td>
                                         <input type="hidden" name="userid" id="userid" value="<%=userid%>"/>
-                                        <input type="text" name="secretekey" id="secretekey" placeholder="Secrete key" class="input" readonly="" value="<%=secretkey%>"/>
+                                        <input type="text" name="secretekey" id="secretekey" placeholder="Secretkey" class="input" readonly="" value="<%=secretkey%>"/>
                                     </td>
                                 </tr>
                                 <tr>

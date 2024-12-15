@@ -17,7 +17,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>Encryption -  Efficient & Secure Data Storage & Access Scheme in Cloud Computing using AES</title>
+        <title>Encryption -  Client Side File Encryption for Secure Cloud Storage</title>
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
         <script type="text/javascript" src="js/scw.js"></script>
         <script type="text/javascript">
@@ -74,7 +74,7 @@
                                     }
                                 %>
                                 <tr>
-                                    <td><input type="text" name="xkey" id="xkey" placeholder="Encryption Key" class="input"/></td>
+                                    <td><input type="text" name="xkey" id="xkey" placeholder="Encryption Key" class="input" value="secp256r1" readonly/></td>
                                 </tr>
                                 <tr>
                                     <td><input type="file" name="txtfile" id="txtfile" class="input"/></td>

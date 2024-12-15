@@ -47,6 +47,7 @@ public class KeyGeneration extends HttpServlet {
 
         HttpSession session = request.getSession(true);
         //connection from database
+        System.out.println("Entered in doPost of KeyGeneration");
         try {
             con = com.example.connection.DbConnection.makeConnection();
         } catch (Exception e) {
@@ -77,6 +78,7 @@ public class KeyGeneration extends HttpServlet {
             ecdhU.init(privKeyU);
             ecdhU.doPhase(pubKeyV, true);
             KeyAgreement ecdhV = KeyAgreement.getInstance("ECDH");
+
             ecdhV.init(privKeyV);
             ecdhV.doPhase(pubKeyU, true);
             secretU = new BigInteger(1, ecdhU.generateSecret()).toString(16).toUpperCase();

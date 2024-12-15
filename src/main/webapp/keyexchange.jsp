@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
-        <title>Key Exchange -  Efficient & Secure Data Storage & Access Scheme in Cloud Computing using AES</title>
+        <title>Key Exchange -  Client Side File Encryption for Secure Cloud Storage</title>
         <link href="css/style.css" rel="stylesheet" type="text/css">
         <script type="text/javascript">
             function validation() {
@@ -67,11 +67,13 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span onclick="" class="span"><strong>Enter your secret private key for ECDH key exchange</strong></span>
+                                        <span onclick="" class="span"><strong>Your secret private key for ECDH key exchange</strong></span>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><input type="text" name="secretkey" id="secretkey" placeholder="Secret Key" class="input"/></td>
+                                    <td>
+                                        <input type="text" name="secretkey" id="secretkey" class="input" value="secp256r1" readonly />
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td align="right">

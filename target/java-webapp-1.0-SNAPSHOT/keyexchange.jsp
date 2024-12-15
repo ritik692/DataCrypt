@@ -1,6 +1,6 @@
 <%--
     Document   : keyexchange
-    Author     : Varun Dhall
+    Author     : Rajnish, Ritik and Rugung
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
@@ -67,11 +67,13 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span onclick="" class="span"><strong>Enter your secret private key for ECDH key exchange</strong></span>
+                                        <span onclick="" class="span"><strong>Your secret private key for ECDH key exchange</strong></span>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><input type="text" name="secretkey" id="secretkey" placeholder="Secret Key" class="input"/></td>
+                                    <td>
+                                        <input type="text" name="secretkey" id="secretkey" class="input" value="secp256r1" readonly />
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td align="right">

@@ -101,7 +101,7 @@ public class Register extends HttpServlet {
             System.out.println("Session ID: " + session.getAttribute("ID"));
             response.sendRedirect("keyexchange.jsp?userid=" + userid);
         } else {
-            session.setAttribute("MSG", "Your data has not been registered.");
+            session.setAttribute("MSG", "Email Id is already registered");
             response.sendRedirect("register.jsp");
         }
     }

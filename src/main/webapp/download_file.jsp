@@ -16,7 +16,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>Download -  Efficient & Secure Data Storage & Access Scheme in Cloud Computing using AES</title>
+        <title>Download -  Client Side File Encryption for Secure Cloud Storage</title>
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
@@ -44,8 +44,9 @@
                                             String filename = request.getParameter("filename");
                                              String aes_key = request.getParameter("aes_key");
                                         %>
-                                        Your aes key has been successfully decrypted.<br/>Your AES KEY is <%=aes_key%><br/>
-                                        <a href="<%=filename%>" class="span">Click here to download decrypted file</a><br/><br/>
+                                        Your AES key has been successfully decrypted.<br/>Your AES KEY is <span style="color: red;"><%= aes_key %></span><br/>
+
+                                        <a href="<%=filename%>" class="span">Click here to download encrypted file</a><br/><br/>
                                     </td>
                                 </tr>
 

@@ -16,7 +16,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>Decrypt AES Key  -  Efficient & Secure Data Storage & Access Scheme in Cloud Computing using AES</title>
+        <title>Decrypt AES Key  -  Client Side File Encryption for Secure Cloud Storage</title>
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
         <script type="text/javascript" src="js/scw.js"></script>
         <script type="text/javascript">
@@ -51,7 +51,7 @@
                                 <tr>
                                     <td>
                                         <div class="expand">
-                                            <span>Decrypted AES key and download file</span>
+                                            <span>Decrypt AES key </span>
                                         </div>
                                     </td>
                                 </tr>
@@ -73,7 +73,7 @@
                                 %>
                                 <tr>
                                     <td class="span">
-                                        Enter public key for download file and decrypt AES Key.
+                                        Enter the public key to decrypt AES Key.
                                     </td>
                                 </tr>
                                 <tr>

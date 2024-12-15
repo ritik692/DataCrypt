@@ -1,6 +1,6 @@
 <%--
     Document   : register
-    Author     : Varun Dhall
+    Author     : Rajnish, Ritik and Rugung
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

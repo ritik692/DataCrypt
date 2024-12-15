@@ -1,11 +1,11 @@
 <%--
     Document   : header
-    Author     : Varun Dhall
+    Author     : Rajnish, Ritik and Rugung
 --%>
 <table cellpadding="0" cellspacing="0" width="100%">
     <tr>
         <td  valign="middle" align="left">
-            <h1>Secure Cloud Simulation</h1>
+            <h1>DataCrypt</h1>
         </td>
         <td valign="bottom" align="right" style="padding-right: 10px;">
         </td>
@@ -51,7 +51,7 @@
             <a href="login.jsp" class="white_font_bold">&nbsp;Login&nbsp;</a>
             <span class="white_font_bold">
                 <marquee style="width: 640px;margin-left: 20px;">
-                    Efficient & Secure Data Storage & Access Scheme in Cloud Computing using Elliptic Curve Cryptography and AES
+                    Client Side File Encryption for Secure Cloud Storage
                 </marquee>
             </span>
         </td>

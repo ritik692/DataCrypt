@@ -1,6 +1,6 @@
 <%--
     Document   : decryption
-    Author     : Varun Dhall
+    Author     : Rajnish, Ritik and Rugung
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -21,10 +21,10 @@
         <script type="text/javascript" src="js/scw.js"></script>
         <script type="text/javascript">
             function validation() {
-                var publickey = document.getElementById('publickey');
-                if (publickey.value.trim() == "") {
+                var key = document.getElementById('key');
+                if (key.value.trim() == "") {
                     alert('Please enter AES key');
-                    publickey.focus();
+                    key.focus();
                     return false;
                 }
                 var txtfile = document.getElementById('txtfile');
@@ -71,7 +71,7 @@
                                     }
                                 %>
                                 <tr>
-                                    <td><input type="text" name="publickey" id="publickey" placeholder="AES Key" class="input"/></td>
+                                    <td><input type="text" name="key" id="key" placeholder="AES Key" class="input"/></td>
                                 </tr>
                                 <tr>
                                     <td><input type="file" name="txtfile" id="txtfile" class="input"/></td>

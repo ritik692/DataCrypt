@@ -23,7 +23,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>My Account -  Efficient & Secure Data Storage & Access Scheme in Cloud Computing using AES</title>
+        <title>My Account -  Client Side File Encryption for Secure Cloud Storage</title>
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
         <script type="text/javascript" src="js/scw.js"></script>
         <script type="text/javascript">
