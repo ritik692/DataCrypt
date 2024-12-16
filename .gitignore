@@ -28,8 +28,8 @@ bin/
 ### Mac OS ###
 .DS_Store
 
-*.env
+.env
 
-src/main/webapp/uploads
+target/**
 
-target/
+uploads/**
